@@ -1,6 +1,6 @@
 Ejercicio 1
 
-SELECT flightID FROM flights ORDER BY flightID DESC LIMIT 1
+select COUNT(*) FROM flights
 
 Ejercicio 2
 
@@ -31,15 +31,11 @@ LIMIT 24
 
 Ejercicio 5
 
+SELECT UniqueCarrier, colYear, colMonth, 
+SUM(Cancelled) AS Total_Cancelados FROM flights 
+GROUP BY UniqueCarrier, colYear, colMonth 
+ORDER BY Total_Cancelados DESC;
 
-SELECT uniqueCarrier, colYear, colMonth, 
-       avg(ArrDelay) as avg_delay, 
-       sum(cancelled) as total_cancelled
-FROM flights
-WHERE cancelled = 1
-GROUP BY UniqueCarrier, colyear, colMonth
-ORDER BY total_cancelled DESC, colyear
-LIMIT 11;
 
 Ejercicio 6
 
